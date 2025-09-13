@@ -6,6 +6,9 @@ dotenv.config();
 connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Middleware to parse JSON bodies
+app.use(express.json());
 app.use("/api/notes", notesRoutes);
 
 app.listen(PORT, () => {
